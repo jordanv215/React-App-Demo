@@ -51,6 +51,9 @@ class Timer extends Component {
       <div>
         <p>Time spent on site: </p>
         <span>00 seconds</span>
+        <button onClick={this.start}>Start</button>
+        <button onClick={this.stop}>Stop</button>
+        <button onClick={this.reset}>Reset</button>
       </div>
     );
   }
