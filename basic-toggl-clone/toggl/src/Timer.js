@@ -6,7 +6,8 @@ class Timer extends Component {
   render(){
     return(
       <div>
-        <p>Here is the content of the component</p>
+        <p>Time spent on site: </p>
+        <span>00 seconds</span>
       </div>
     );
   }
