@@ -6,11 +6,13 @@ class Timer extends Component {
 
 // using Component life cycle - this will trigger right after Timer has finished loading onto the page.
   componentDidMount(){
+    // in this case, start the prop as soon as Timer loads.
     this.start
   }
 
   // let's start creating a couple of functions to handle the desired functionality of the application
   stop(){
+    // when stop is called, clear the setInterval - or just stop the timer
     clearInterval(this.timer)
   }
 
@@ -28,6 +30,20 @@ class Timer extends Component {
     const newTime = this.state.clock+1
     this.setState({clock: newTime})
   }
+
+  constructor(props){
+  super(props);
+
+  this.state = {
+    clock: 0
+  };
+
+  // binding
+  this.ticker = this.ticker.bind(this);
+  this.stop = this.stop.bind(this);
+  this.start = this.start.bind(this);
+  this.reset = this.reset.bind(this);
+}
 
 
   render(){
